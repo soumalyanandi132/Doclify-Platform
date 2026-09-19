@@ -19,6 +19,7 @@ authors = [
 dependencies = [
     "click",
     "pydantic>=2",
+    "httpx>=0.27",
     "pathspec>=1.0.3",
     "pyyaml",
     "rich",
@@ -38,6 +39,7 @@ Issues = "https://github.com/KalyanM45/Doclify/issues"
 
 [project.scripts]
 doclify = "doclify.pipelines.supervisor:cli"
+doclify-web = "doclify.web.server:main"
 
 [tool.setuptools]
 [tool.setuptools.packages.find]
@@ -45,4 +47,4 @@ where = ["."]
 include = ["doclify*"]
 
 [tool.setuptools.package-data]
-"doclify" = ["resources/*.gitignore", "prompts/*.txt"]
+"doclify" = ["resources/*.gitignore", "prompts/*.txt", "web/static/*"]

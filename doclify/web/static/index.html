@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doclify — Your code, understood</title>
+  <meta name="description" content="Explore repositories, ask questions grounded in source code, and create documentation in one workspace.">
+  <link rel="icon" href="static/favicon.svg"><link rel="stylesheet" href="static/styles.css">
+  <script defer src="static/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to workspace</a>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a href="#overview" class="brand"><span class="brand-mark">d<span>•</span></span>doclify<span class="brand-tag">workspace</span></a>
+      <div class="workspace-label"><span class="avatar">D</span><div>My workspace<small>Personal workspace</small></div><span class="workspace-chevron">⌄</span></div>
+      <div class="nav-caption">WORKSPACE</div>
+      <nav aria-label="Main navigation" id="navigation">
+        <button data-view="overview" class="nav-item active"><span class="nav-icon">◫</span> Overview</button>
+        <button data-view="files" class="nav-item"><span class="nav-icon">⌘</span> Source explorer</button>
+        <button data-view="documents" class="nav-item"><span class="nav-icon">▤</span> Documentation</button>
+        <button data-view="assistant" class="nav-item"><span class="nav-icon">✧</span> Code assistant<span class="small-tag">AI</span></button>
+        <button data-view="activity" class="nav-item"><span class="nav-icon">◷</span> Activity</button>
+      </nav>
+      <div class="nav-caption repo-caption">REPOSITORIES<button id="sidebar-add" aria-label="Connect a repository">+</button></div>
+      <div id="repository-list" class="repository-list"><span class="muted">No repositories yet</span></div>
+      <div class="sidebar-bottom"><div class="context-card"><span class="context-icon">✦</span><strong>Good docs start with context.</strong><p>Bring your source and documentation into the same conversation.</p></div><button data-view="settings" class="nav-item"><span class="nav-icon">⚙</span> Workspace settings</button><div class="sidebar-footer"><span class="avatar small">S</span><span>Single workspace</span><span class="version">v0.1</span></div></div>
+    </aside>
+    <div class="surface">
+      <header class="topbar"><button class="mobile-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button><div class="breadcrumb">Workspace<span>/</span><strong id="breadcrumb-title">Overview</strong></div><div class="top-actions"><span id="mode-badge" class="mode-badge">Source workspace</span><a href="https://github.com/soumalyanandi132/Doclify-Platform" target="_blank" rel="noreferrer" class="github-link">GitHub ↗</a><span class="avatar small">S</span></div></header>
+      <main id="main" tabindex="-1"><div class="initial-loading"><span class="spinner"></span> Opening your workspace…</div></main>
+      <footer class="page-footer"><span>Doclify Platform</span><span>Built for the moments between reading code and understanding it.</span></footer>
+    </div>
+  </div>
+  <dialog id="connect-dialog"><form id="connect-form"><div class="dialog-top"><span class="eyebrow">NEW REPOSITORY</span><button type="button" class="icon-button" id="close-dialog" aria-label="Close">×</button></div><h2>Bring your code into focus.</h2><p>Connect a public GitHub repository to explore its source and build documentation.</p><label for="repo-url">GitHub repository URL</label><input id="repo-url" type="url" placeholder="https://github.com/owner/repository" required autocomplete="off"><div class="form-note">Read-only import. No code is executed or changed. Up to 300 text files; large files and generated dependencies are skipped.</div><p id="connect-error" class="error" role="alert"></p><button class="button primary full" id="connect-submit" type="submit">Connect repository <span>↗</span></button></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
